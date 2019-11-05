@@ -379,7 +379,7 @@ void do_bgfg(char **argv)
       return;
       } 
   
-    else{
+    else{			//checks if first character in input is a % sign
 	if (argv[1][0]=='%')  {
 	    jid = atoi(&(argv[1][1]));
 	    if ((job = getjobjid(jobs, jid)) == NULL)
@@ -392,7 +392,7 @@ void do_bgfg(char **argv)
 	{
 	if (!(argv[1][0]-'0'>=0 && argv[1][0]-'9'<=0))
 	  {
-	    printf("%s: %s\n", argv[0], "argument must be a PID or %jobid");
+	    printf("%s: %s\n", argv[0], "argument must be a PID or %%jobid");
 	    return;
 	  }
 	else 
